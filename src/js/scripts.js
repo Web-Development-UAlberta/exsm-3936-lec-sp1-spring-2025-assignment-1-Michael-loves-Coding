@@ -1,14 +1,63 @@
-// eslint-disable-next-line no-unused-vars
-/* global output, input */
-// eslint-disable-next-line no-unused-vars
 async function main() {
-  // This is where the code you're actually experimenting with goes.
+  class Car {
+    constructor(make, model) {
+      this.make = make;
+      this.model = model;
+      this.year = year;
+      this.odometer = 0;
+      this.engine = engine;
+      let myEngine = new Engine()
+    }
 
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
-  let name = await input(prompt);
+    startEngine() {
+      this.engine.running = true;
+     }
+   
+     stopEngine() {
+      this.engine.running = false;
+     }
+   
+     drive(distance){
+      if(!this.engine.running){
+        throw new error("Cannot drive: The engine is not running!");
+      }
+      this.odometer += distance;
+     }
+    }
 
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
+
+  class Engine{
+      constructor(cylinderCount) {
+        this.cylinderCount = cylinderCount
+        this.isRunning = false
+      }
   }
+
+  let myCar = new Car
+  myCar.start(myEngine)
+  myCar.drive(100)
+  myCar.stop()
+  myCar.start()
+  myCar.drive(50)
+  myCar.stop()
+  output(`Final odometer reading: ${myEngine.odometer}`);
+  output("Car as JSON:", JSON.stringify(myCar));
 }
+
+
+
+
+
+  
+  
+
+ 
+  
+  
+
+
+
+
+
+
+
