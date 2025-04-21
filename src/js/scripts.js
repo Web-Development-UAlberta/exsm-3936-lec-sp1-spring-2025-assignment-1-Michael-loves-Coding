@@ -33,7 +33,15 @@ async function main() {
       }
   }
 
-  
+  let myCar = new Car
+  myCar.start(myEngine)
+  myCar.drive(100)
+  myCar.stop()
+  myCar.start()
+  myCar.drive(50)
+  myCar.stop()
+  output(`Final odometer reading: ${myEngine.odometer}`);
+  output("Car as JSON:", JSON.stringify(myCar));
 }
 
 
