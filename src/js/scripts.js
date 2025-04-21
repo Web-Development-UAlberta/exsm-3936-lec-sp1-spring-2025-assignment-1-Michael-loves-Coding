@@ -9,10 +9,34 @@ async function main() {
       let myEngine = new Engine()
     }
 
+    startEngine() {
+      this.engine.running = true;
+     }
+   
+     stopEngine() {
+      this.engine.running = false;
+     }
+   
+     drive(distance){
+      if(!this.engine.running){
+        throw new error("Cannot drive: The engine is not running!");
+      }
+      this.odometer += distance;
+     }
+    }
+
+
+  class Engine{
+      constructor(cylinderCount) {
+        this.cylinderCount = cylinderCount
+        this.isRunning = false
+      }
+  }
+
   
 }
 
-}
+
 
 
 
